@@ -135,6 +135,12 @@ view: order_items {
     sql: 1.0 * ${total_sales_email_users} / NULLIF(${total_sales}, 0) ;;
   }
 
+  measure: average_spend_per_year {
+    type: number
+    value_format_name: usd
+    sql: 1.0 * ${total_sales} / NULLIF(${users.count}, 0) ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
