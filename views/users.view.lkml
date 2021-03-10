@@ -93,4 +93,10 @@ view: users {
     type: count
     drill_fields: [id, last_name, first_name, events.count, order_items.count]
   }
+
+  dimension: is_email_source {
+    type: yesno
+    sql: ${traffic_source} = 'Email' ;;
+  }
+
 }
